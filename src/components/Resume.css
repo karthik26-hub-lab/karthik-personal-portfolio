@@ -1,0 +1,406 @@
+.resume-page {
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* Background Aurora for Web View */
+.resume-aurora {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 0%, rgba(255,255,255,0.03) 0%, transparent 60%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.resume-actions {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  z-index: 1;
+}
+
+.resume-back-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.resume-back-link:hover {
+  color: var(--text-primary);
+}
+
+.resume-print-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--text-primary);
+  color: var(--bg-color);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.resume-print-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(255,255,255,0.1);
+}
+
+/* Web Document - Premium Grid Layout */
+.resume-document {
+  width: 100%;
+  max-width: 1100px;
+  background: rgba(255, 255, 255, 0.02); /* Glassmorphic dark */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  color: var(--text-primary);
+  padding: 4rem;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  border-radius: 12px;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* Sidebar Styling */
+.resume-sidebar {
+  position: sticky;
+  top: 4rem;
+}
+
+.resume-header {
+  margin-bottom: 3rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 2rem;
+}
+
+.resume-name {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  line-height: 1;
+  background: linear-gradient(135deg, #fff 0%, #aaa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.resume-title {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0 0 1.5rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.resume-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.resume-contact a {
+  color: var(--text-primary);
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.resume-contact a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.resume-section {
+  margin-bottom: 3rem;
+  padding: 0;
+  min-height: auto;
+  display: block;
+}
+
+.resume-section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-primary);
+}
+
+.resume-summary {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.resume-skills {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.skill-group {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  transition: transform 0.2s ease;
+}
+
+.skill-group:hover {
+  transform: translateX(5px);
+}
+
+.skill-category {
+  display: block;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.skill-list {
+  color: var(--text-secondary);
+}
+
+/* Timeline & Content Styling */
+.timeline-container {
+  position: relative;
+  border-left: 2px solid rgba(255,255,255,0.1);
+  padding-left: 2rem;
+  margin-left: 0.5rem;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -2.4rem;
+  top: 0.25rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background: var(--text-primary);
+  border: 2px solid var(--bg-color);
+  box-shadow: 0 0 0 4px rgba(255,255,255,0.05);
+}
+
+.resume-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.25rem;
+}
+
+.resume-item-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.resume-item-date {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.resume-item-subtitle {
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--text-primary);
+  opacity: 0.8;
+  margin: 0 0 1rem 0;
+}
+
+.resume-item-metrics {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.resume-bullets {
+  margin: 0;
+  padding-left: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.resume-bullets li {
+  margin-bottom: 0.5rem;
+}
+
+
+/* --- Print Styles for ATS Parsing --- */
+@media print {
+  @page {
+    margin: 0.5in;
+  }
+  
+  body {
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    -webkit-print-color-adjust: exact;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+  
+  .resume-page {
+    padding: 0;
+    display: block;
+    background: #fff;
+  }
+  
+  .resume-document {
+    padding: 0;
+    box-shadow: none;
+    border: none;
+    background: #fff;
+    max-width: 100%;
+    width: 100%;
+    color: #000;
+    display: block; /* Remove grid for print */
+  }
+
+  /* Reset layout to standard 1-column */
+  .resume-sidebar {
+    position: static;
+  }
+
+  .resume-header {
+    text-align: center;
+    border-bottom: 2px solid #000;
+    margin-bottom: 2rem;
+  }
+
+  .resume-name {
+    color: #000;
+    background: none;
+    -webkit-text-fill-color: #000;
+    font-size: 3rem;
+  }
+
+  .resume-title {
+    color: #333;
+  }
+
+  .resume-contact {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .resume-contact a {
+    color: #000;
+    opacity: 1;
+  }
+
+  /* Flatten timeline to normal list for print */
+  .timeline-container {
+    border-left: none;
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  .timeline-dot {
+    display: none;
+  }
+
+  .resume-section-title {
+    color: #000;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .resume-item-title {
+    color: #000;
+  }
+
+  .resume-item-subtitle, 
+  .resume-item-date, 
+  .resume-bullets, 
+  .resume-summary, 
+  .skill-category, 
+  .skill-list,
+  .resume-item-metrics {
+    color: #222;
+  }
+
+  /* Adjust grid spacing and item breaks */
+  .resume-section {
+    margin-bottom: 1.5rem;
+  }
+
+  .resume-item {
+    page-break-inside: avoid;
+    margin-bottom: 1.5rem;
+  }
+
+  .skill-group:hover {
+    transform: none;
+  }
+}
+
+/* Mobile responsive for web view */
+@media (max-width: 900px) {
+  .resume-document {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem;
+  }
+  
+  .resume-sidebar {
+    position: static;
+  }
+  
+  .resume-header {
+    text-align: center;
+  }
+  
+  .resume-contact {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .resume-item-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .resume-item-date {
+    margin-top: 0.25rem;
+  }
+}

@@ -1,0 +1,148 @@
+.experience-section {
+  position: relative;
+  overflow: hidden;
+  padding: 8rem 0;
+  width: 100%;
+}
+
+.experience-heading {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  margin-bottom: 3rem;
+  color: var(--text-secondary);
+}
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.experience-row {
+  display: grid;
+  grid-template-columns: 200px 1fr auto;
+  align-items: center;
+  padding: 4.5rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Background overlay for hover */
+.experience-row::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.02); /* Extremely subtle dark overlay */
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: -1;
+}
+
+.experience-row:hover::before {
+  transform: scaleY(1);
+  transform-origin: top;
+}
+
+.experience-row:hover {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.exp-year {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.exp-details {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+}
+
+.exp-role {
+  font-size: 3.25rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin: 0;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.exp-company {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.experience-row:hover .exp-role,
+.experience-row:hover .exp-company {
+  transform: translateX(10px);
+}
+
+.exp-arrow {
+  color: var(--text-primary);
+  opacity: 0;
+  transform: translate(-20px, 20px);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.experience-row:hover .exp-arrow {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+@media (max-width: 1024px) {
+  .exp-role {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-row {
+    grid-template-columns: 1fr auto;
+    padding: 3rem 0;
+    gap: 1rem;
+  }
+  
+  .exp-year {
+    grid-column: 1 / -1;
+    margin-bottom: -0.5rem;
+  }
+  
+  .exp-details {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .exp-role {
+    font-size: 2rem;
+  }
+  
+  .exp-company {
+    font-size: 1.1rem;
+  }
+  
+  .experience-row:hover {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .exp-arrow {
+    transform: translate(-10px, 10px);
+  }
+}

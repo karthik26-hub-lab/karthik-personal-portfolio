@@ -1,0 +1,276 @@
+.hero-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-top: 6rem;
+  min-height: 90vh !important;
+  padding-bottom: 4rem !important;
+  background: var(--bg-color);
+  z-index: 10;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin-top: 4rem;
+}
+
+.text-muted {
+  color: var(--text-secondary);
+}
+
+.hero-subtitle {
+  margin: 3.5rem 0 5.5rem;
+  max-width: 600px;
+}
+
+.hero-cta {
+  display: flex;
+  justify-content: center;
+}
+
+/* Floating Water Pill Container - 4D Iridescent */
+.water-pill-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem;
+  
+  /* Warm Pink/Purple 4D Iridescent Animated Background */
+  background: linear-gradient(120deg, rgba(255, 107, 107, 0.25), rgba(206, 159, 252, 0.25), rgba(255, 154, 158, 0.25), rgba(206, 159, 252, 0.25));
+  background-size: 300% 300%;
+  
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 99px;
+  
+  /* 4D Volumetric Colored Shadows - Warm Pink/Purple */
+  box-shadow: 
+    inset 0 4px 8px rgba(255, 255, 255, 0.9),
+    inset 8px 0 16px rgba(255, 107, 107, 0.3),
+    inset -8px 0 16px rgba(206, 159, 252, 0.3),
+    inset 0 -4px 8px rgba(255, 154, 158, 0.2),
+    0 12px 32px rgba(0, 0, 0, 0.08);
+    
+  animation: floatPill 6s ease-in-out infinite, liquid4D 6s linear infinite;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Outer 4D Glow */
+.water-pill-container::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 99px;
+  background: linear-gradient(120deg, #ff6b6b, #ce9ffc, #ff9a9e, #ce9ffc);
+  background-size: 300% 300%;
+  animation: liquid4D 6s linear infinite;
+  z-index: -1;
+  filter: blur(12px);
+  opacity: 0.3;
+  transition: opacity 0.4s ease;
+}
+
+.water-pill-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    inset 0 4px 8px rgba(255, 255, 255, 0.9),
+    inset 8px 0 16px rgba(255, 154, 158, 0.5),
+    inset -8px 0 16px rgba(0, 242, 254, 0.5),
+    inset 0 -4px 8px rgba(161, 140, 209, 0.4),
+    0 20px 48px rgba(161, 140, 209, 0.2);
+}
+
+.water-pill-container:hover::before {
+  opacity: 0.65;
+  filter: blur(16px);
+}
+
+@keyframes floatPill {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes liquid4D {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+.water-pill-btn {
+  padding: 0.85rem 1.75rem;
+  border-radius: 99px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.water-pill-btn.primary {
+  color: var(--text-primary);
+  /* Water drop aesthetic */
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.87); /* Sharp 87% opacity reflection */
+  box-shadow: 
+    inset 0 4px 6px rgba(255, 255, 255, 0.9),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.05),
+    0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.water-pill-btn.primary:hover {
+  background: rgba(255, 255, 255, 0.45);
+  transform: translateY(-1px);
+  box-shadow: 
+    inset 0 4px 8px rgba(255, 255, 255, 1), 
+    0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.water-pill-divider {
+  width: 1px;
+  height: 24px;
+  background: rgba(0, 0, 0, 0.1);
+  margin: 0 0.25rem;
+}
+
+.water-pill-btn.secondary {
+  color: var(--text-secondary);
+  background: transparent;
+}
+
+.water-pill-btn.secondary:hover {
+  color: var(--text-primary);
+  background: transparent;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+}
+
+.hero-socials-wrapper {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-socials-pill {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0.6rem 1.25rem;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 99px;
+  box-shadow: 
+    inset 0 2px 4px rgba(255, 255, 255, 0.5),
+    0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.social-divider {
+  width: 1px;
+  height: 18px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.social-icon {
+  color: var(--text-secondary);
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+}
+
+.social-icon:hover {
+  color: var(--text-primary);
+  transform: translateY(-2px);
+  opacity: 1;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+}
+
+.hero-aurora {
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(circle, rgba(138, 155, 177, 0.15) 0%, transparent 60%);
+  filter: blur(60px);
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  animation: float-aurora 20s ease-in-out infinite alternate;
+}
+
+@keyframes float-aurora {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-5vw, 10vh) scale(1.1); }
+}
+
+@media (max-width: 768px) {
+  .water-pill-container {
+    padding: 0.25rem;
+  }
+  
+  .water-pill-btn {
+    padding: 0.6rem 1.15rem;
+    font-size: 0.85rem;
+  }
+  
+  .water-pill-divider {
+    height: 18px;
+    margin: 0 0.15rem;
+  }
+  
+  .hero-socials-wrapper {
+    margin-top: 2rem;
+  }
+  
+  .hero-socials-pill {
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Scroll Indicator */
+.scroll-indicator-container {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 5;
+}
+
+.scroll-pill {
+  width: 22px;
+  height: 38px;
+  border: 1.5px solid rgba(134, 134, 139, 0.4);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+}
+
+.scroll-dot {
+  width: 4px;
+  height: 8px;
+  background-color: #86868b;
+  border-radius: 4px;
+  animation: scrollBounce 2s infinite cubic-bezier(0.15, 0.41, 0.69, 0.94);
+}
+
+@keyframes scrollBounce {
+  0% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(12px); opacity: 0; }
+  51% { transform: translateY(-4px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}

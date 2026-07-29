@@ -1,0 +1,25 @@
+.spotlight-card {
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  /* Will inherit the flex properties from bento-card or project-card */
+  display: flex;
+  flex-direction: inherit;
+}
+
+.spotlight-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* Ensure content sits above the spotlight glow */
+.spotlight-card > *:not(.spotlight-glow) {
+  position: relative;
+  z-index: 1;
+}

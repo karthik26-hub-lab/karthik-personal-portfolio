@@ -1,0 +1,13 @@
+.hyper-text-container {
+  display: inline-flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.hyper-text-char {
+  display: inline-block;
+}
+
+.hyper-text-char.space {
+  width: 0.25em; /* roughly standard space width */
+}
