@@ -1,6 +1,6 @@
 # Karthik's Portfolio (Apple-Inspired)
 
-![Portfolio Preview](./public/images/lumio.png)
+![Portfolio Preview](./public/images/hero-ss.png)
 
 A high-performance, meticulously crafted personal portfolio designed to showcase top-tier frontend engineering skills. Built with an Apple-inspired aesthetic, this portfolio features complex layout systems, hardware-accelerated animations, and zero-lag mobile responsiveness.
 
