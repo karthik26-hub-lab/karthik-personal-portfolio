@@ -1,16 +1,57 @@
-# React + Vite
+# Karthik's Portfolio (Apple-Inspired)
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+![Portfolio Preview](./public/images/lumio.png)
 
-Currently, two official plugins are available:
+A high-performance, meticulously crafted personal portfolio designed to showcase top-tier frontend engineering skills. Built with an Apple-inspired aesthetic, this portfolio features complex layout systems, hardware-accelerated animations, and zero-lag mobile responsiveness.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+🌐 **[Live Production Deployment](https://karthik-portfolio.vercel.app)**
 
-## React Compiler
+## 🚀 Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Apple-Inspired Glassmorphism:** Deeply integrated frosted glass effects (`backdrop-filter`) and dynamic island navigation paradigms.
+- **Magnetic Dock Navigation:** A custom-engineered, frictionless drag-to-select navigation system built from scratch with absolute coordinate math for zero-lag 60fps tracking.
+- **Hardware-Accelerated Animations:** Smooth page transitions, text reveals, and micro-interactions powered by GSAP and Framer Motion.
+- **3D Canvas Rendering:** Subtle, high-performance particle and star field backgrounds using React Three Fiber.
+- **Mobile-First UX:** Complex touch event handling (`touchmove` interception, long-press gesture detection, custom swipe-to-confirm sliders) ensuring native-app-like feel on iOS and Android.
 
-## Expanding the Oxlint configuration
+## 🛠 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- **Framework:** React 19 (via Vite)
+- **Styling:** Vanilla CSS (CSS Variables, Flexbox/Grid, custom keyframes)
+- **Animation:** GSAP (ScrollTrigger), Framer Motion, Motion
+- **3D Graphics:** React Three Fiber, Three.js
+- **Icons:** Lucide React
+- **Deployment:** Vercel
+
+## 💻 Local Development Setup
+
+To run this project locally, follow these steps:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/karthik26-hub-lab/karthik-personal-portfolio.git
+   cd karthik-personal-portfolio
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open in browser:**
+   Navigate to `http://localhost:5173/`
+
+## 🏗 Architecture Highlights
+
+- **`SwipeButton.jsx`**: A highly interactive, zero-latency swipe-to-confirm button for contact interactions, utilizing custom pointer capture and haptic feedback (`navigator.vibrate`).
+- **`Navbar.jsx`**: Features two distinct physics engines. A strict magnetic drag engine for desktop, and a specialized long-press context menu engine for mobile devices with Safari rubber-banding overrides.
+- **Performance Profiling**: Rendering of `box-shadow` heavy layers (`StarsBackground`) are actively throttled based on device capability/viewport size to guarantee 60fps scrolling.
+
+## 📄 License
+
+This project is open-source and available under the MIT License.
