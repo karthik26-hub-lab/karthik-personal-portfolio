@@ -39,7 +39,7 @@ const Resume = () => {
 
       {/* Web-only Navigation & Actions */}
       <div className="resume-actions no-print">
-        <Link to="/" className="resume-back-link" onClick={() => hapticFeedback.light()}>
+        <Link to="/" className="resume-back-link" onClick={() => hapticFeedback.hover()}>
           <ArrowLeft size={20} />
           <span>Back to Portfolio</span>
         </Link>

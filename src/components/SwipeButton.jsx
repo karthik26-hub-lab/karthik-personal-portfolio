@@ -13,7 +13,7 @@ const SwipeButton = ({ targetUrl, text = "Swipe to connect" }) => {
     if (isSuccess) return;
     setIsDragging(true);
     e.target.setPointerCapture(e.pointerId);
-    hapticFeedback.light();
+    hapticFeedback.hover();
   };
 
   const handlePointerMove = (e) => {
@@ -48,7 +48,7 @@ const SwipeButton = ({ targetUrl, text = "Swipe to connect" }) => {
       }, 400);
     } else {
       setDragProgress(0);
-      hapticFeedback.light();
+      hapticFeedback.hover();
     }
   };
 
