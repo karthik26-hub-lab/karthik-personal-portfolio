@@ -12,7 +12,7 @@ const SwipeButton = ({ targetUrl, text = "Swipe to connect" }) => {
   const handlePointerDown = (e) => {
     if (isSuccess) return;
     setIsDragging(true);
-    e.target.setPointerCapture(e.pointerId);
+    e.currentTarget.setPointerCapture(e.pointerId);
     hapticFeedback.hover();
   };
 
@@ -32,7 +32,7 @@ const SwipeButton = ({ targetUrl, text = "Swipe to connect" }) => {
   const handlePointerUp = (e) => {
     if (!isDragging || isSuccess) return;
     setIsDragging(false);
-    e.target.releasePointerCapture(e.pointerId);
+    e.currentTarget.releasePointerCapture(e.pointerId);
     
     if (dragProgress > 0.8) {
       setDragProgress(1);
